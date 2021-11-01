@@ -1,3 +1,12 @@
-body{
-    aaaaaaaaaaaaa;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+    word-wrap: break-word;
+    -webkit-text-size-adjust: none;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
 }
