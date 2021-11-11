@@ -1,6 +1,6 @@
 <?php
 require "../model/conexao.php";
-require "../model/opcoes.php";
+require "../model/Opcoes.php";
 
 $objOpcoes = new Opcoes();
 
