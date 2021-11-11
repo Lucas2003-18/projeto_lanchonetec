@@ -1,73 +1,50 @@
 <?php
 require_once "conexao.php";
 
-    class User extends Db{
+class User extends Db{
 
-    //atributos    
-    private $idUsuario;
-    private $nome;
-    private $senha;
+private $idUsuario;
+private $nome;
+private $senha;
 
-    //getters and setters
-    /**
-     * Get the value of idUsuario
-     */ 
-    public function getIdUsuario()
-    {
-        return $this->idUsuario;
-    }
+public function getIdUsuario(){
+    return $this->idUsuario;
+}
+public function setIdUsuario($idUsuario){
+    $this->idUsuario = $idUsuario;
+}
 
-    /**
-     * Set the value of idUsuario
-     *
-     * @return  self
-     */ 
-    public function setIdUsuario($idUsuario)
-    {
-        $this->idUsuario = $idUsuario;
+public function getNome(){
+    return $this->nome;
+}
+public function setNome($nome){
+    $this->nome = $nome;
+}
 
-        return $this;
-    }
+public function getSenha(){
+    return $this->senha;
+}
+public function setSenha($senha){
+    $this->senha = $senha;
+}
 
-    /**
-     * Get the value of nome
-     */ 
-    public function getNome()
-    {
-        return $this->nome;
-    }
+}
 
-    /**
-     * Set the value of nome
-     *
-     * @return  self
-     */ 
-    public function setNome($nome)
-    {
-        $this->nome = $nome;
 
-        return $this;
-    }
+function saveUser(){
+    try {
+        $user = new User();
 
-    /**
-     * Get the value of senha
-     */ 
-    public function getSenha()
-    {
-        return $this->senha;
-    }
+        isset($_POST['idUsuario']) ? $user->setIdUsuario($_POST['idUsuario']) : "idUsuario nao foi declarado";
+        isset($_POST['nome']) ? $user->setNome($_POST['nome']) : "nome nao foi declarado";
+        isset($_POST['senha']) ? $user->setSenha($_POST['senha']) : "senha nao foi declarada";
 
-    /**
-     * Set the value of senha
-     *
-     * @return  self
-     */ 
-    public function setSenha($senha)
-    {
-        $this->senha = $senha;
+        // começar a mandar os dados pro db a partir daqui
 
-        return $this;
+    } catch (PDOException $e) {
+        echo $e;
     }
 }
+
 
 ?>
