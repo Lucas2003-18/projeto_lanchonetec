@@ -17,7 +17,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
-                  <img src="img/img_exemplo.jpg" alt=="" width="30" height="24" class="d-inline-block align-text-top">
+                  <img src="../img/img_exemplo.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                   LanchoTec
                 </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
