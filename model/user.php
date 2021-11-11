@@ -1,35 +1,73 @@
 <?php
 require_once "conexao.php";
 
+    class User extends Db{
 
+    //atributos    
+    private $idUsuario;
+    private $nome;
+    private $senha;
 
-class User extends Db{
+    //getters and setters
+    /**
+     * Get the value of idUsuario
+     */ 
+    public function getIdUsuario()
+    {
+        return $this->idUsuario;
+    }
 
-private $idUsuario;
-private $nome;
-private $senha;
+    /**
+     * Set the value of idUsuario
+     *
+     * @return  self
+     */ 
+    public function setIdUsuario($idUsuario)
+    {
+        $this->idUsuario = $idUsuario;
 
-public function getIdUsuario(){
-    return $this->idUsuario;
-}
-public function setIdUsuario($idUsuario){
-    $this->idUsuario = $idUsuario;
-}
+        return $this;
+    }
 
-public function getNome(){
-    return $this->nome;
-}
-public function setNome($nome){
-    $this->nome = $nome;
-}
+    /**
+     * Get the value of nome
+     */ 
+    public function getNome()
+    {
+        return $this->nome;
+    }
 
-public function getSenha(){
-    return $this->senha;
-}
-public function setSenha($senha){
-    $this->senha = $senha;
-}
+    /**
+     * Set the value of nome
+     *
+     * @return  self
+     */ 
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
 
+        return $this;
+    }
+
+    /**
+     * Get the value of senha
+     */ 
+    public function getSenha()
+    {
+        return $this->senha;
+    }
+
+    /**
+     * Set the value of senha
+     *
+     * @return  self
+     */ 
+    public function setSenha($senha)
+    {
+        $this->senha = $senha;
+
+        return $this;
+    }
 }
 
 ?>
