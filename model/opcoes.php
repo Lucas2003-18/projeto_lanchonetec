@@ -4,6 +4,7 @@ require_once "conexao.php";
 class Opcoes extends Db{
 
     //atributos
+    private $codigo;
     private $id;
     private $lanche; 
     private $bebida; 
@@ -87,6 +88,26 @@ class Opcoes extends Db{
     public function setId($id)
     {
         $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of codigo
+     */ 
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
+
+    /**
+     * Set the value of codigo
+     *
+     * @return  self
+     */ 
+    public function setCodigo($codigo)
+    {
+        $this->codigo = $codigo;
 
         return $this;
     }

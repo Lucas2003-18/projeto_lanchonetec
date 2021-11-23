@@ -1,5 +1,8 @@
 <?php
+require_once './model/conexao.php';
 require_once './model/User.php';
+
+
 class UserController{
     public function saveUser(){
         $user = new User();
@@ -7,7 +10,6 @@ class UserController{
         if(isset($_SESSION['id'])){ $user->setId($_POST['id']); }
         $user->setName($_POST['name']);
         $user->setSurname($_POST['surname']);
-        $user->setDtBirth($_POST['dtBirthday']);
         $user->setEmail($_POST['email']);
         $user->setUser($_POST['user']);
         $user->setPassword($_POST['password']);
