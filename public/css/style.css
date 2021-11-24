@@ -6,17 +6,35 @@
 
 body {
     margin: auto;
-    text-rendering: optimizeLegibility;
-    word-wrap: break-word;
-    -webkit-text-size-adjust: none;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
     font-family: 'Roboto','Open Sans', Helvetica, Arial, sans-serif;
 }
 
 .container{
-    width: 90vw;
-    height: 90vh;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1{
+    margin-left: 10px;
+    padding-top: 30px;
+}
+
+label{
+    font-size: medium;
+}
+
+#clientName{
+    width: 400px;
+}
+
+#btnCadastroCliente{
+    display: inline;
+
+}
+
+.input-group{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
