@@ -30,8 +30,10 @@ label{
     width: 400px;
 }
 
-#btnCadastroCliente{
+#btnAdicionaCliente{
     display: inline;
+    margin-left: 336px;
+    margin-top: -38px;
 
 }
 
