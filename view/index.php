@@ -3,7 +3,7 @@ session_start();
 //head da página
 require_once 'header.php';
 
-$navbar = require_once './view/shared/navbar.php';
+$navbar = require_once '../view/shared/navbar.php';
 ?>
 
  
@@ -171,20 +171,15 @@ $navbar = require_once './view/shared/navbar.php';
           </div>
         </div>
     </div>
-
-
-
     <div class="col" style="background-color: red;">
       <div class="form-floating">
         <textarea style="resize: none" class="form-control" placeholder="Leave a comment here" id="floatingTextarea" disabled></textarea>
         <label for="floatingTextarea">Pedido</label>
       </div>
     </div>
-</div>
+  </div>
 </div>
       
 <?php //footer da página
-$url_atual = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-echo $url_atual;
 require_once 'footer.php';
 ?>
