@@ -7,9 +7,8 @@ $navbar = require_once '../view/shared/navbar.php';
 ?>
 
  
-
 <div class="row">
-    <div class="col-md-8" style="background-color:blue;">
+    <div class="col-md-8">
         <div class="row">
           <div class="mb-3 row">
            <h1>Dados</h1>
@@ -163,7 +162,6 @@ $navbar = require_once '../view/shared/navbar.php';
     </div>
   </div>
 </div>
-      
 <?php //footer da página
 require_once 'footer.php';
 ?>
