@@ -18,8 +18,7 @@ body {
 }
 
 h1{
-    margin-left: 10px;
-    padding-top: 30px;
+    padding-top: 3vw;
 }
 
 label{
@@ -27,16 +26,25 @@ label{
 }
 
 #clientName{
-    width: 400px;
+    width: 400vw;
 }
 
 #btnAdicionaCliente{
     display: inline;
-    margin-left: 336px;
-    margin-top: -38px;
-
+    margin-left: 24.5vw;
+    margin-top: -2.72vw;
 }
 
 .input-group{
     display: flex;
+}
+
+#typeSnack{
+    margin-top: 5vh;
+    margin-left: -8vw;
+}
+
+#btnAdicionaLanche{
+    height: 38px;
+    top: 5vh;
 }

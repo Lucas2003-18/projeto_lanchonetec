@@ -3,7 +3,7 @@ session_start();
 //head da página
 require_once 'header.php';
 
-$navbar = require_once '../view/shared/navbar.php';
+$navbar = require_once './shared/navbar.php';
 ?>
 
 <div class="container"> 
@@ -38,7 +38,7 @@ $navbar = require_once '../view/shared/navbar.php';
         </div>
         <div class="row">
           <div class="col-md-8" style="background-color:blueviolet;">
-            <div class="input-group col-6 align-self-start">
+            <div class="input-group col align-self-start">
               <label for="typeSnack">Tipo de Lanche</label>
                 <select class="form-control" id="typeSnack">
                   <option>Josevaldo</option>
