@@ -19,7 +19,7 @@
           Cadastros
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="./editarCliente.php">Clientes</a>
+          <a class="dropdown-item" href="./modalCliente.php">Clientes</a>
           <a class="dropdown-item" href="./modalBebidas.php">Bebidas</a>
           <a class="dropdown-item" href="./modalLanches.php">Lanches</a>
           <a class="dropdown-item" href="./modalAdicionais.php">Adicionais</a>

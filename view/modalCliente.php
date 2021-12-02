@@ -1,35 +1,54 @@
 <?php
 
-require_once './header.php';
-require_once './shared/navbar.php';
+include "header.php";
+include "modalCliente.php";
+require "../controller/ClienteController.php";
+
 
 ?>
-<form action="../controller/ClienteController.php" method="post">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Cadastro Cliente</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <label for="codigo">Código</label>
-                        <input type="number" class="form-control" id="codigo" name="codigo">
-                        <label for="nome">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome">
-                        <label for="endereco">Endereço</label>
-                        <input type="text" class="form-control" id="endereco" name="endereco">
-                        <label for="telefone">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" name="telefone">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-primary">Salvar</button>
-                    </div>
-                </div>
-            </div>
-</form>
+<body class="container-fluid">
+
+<h1> Cadastro de Cliente</h1>
+
+<button type="button" class="btn btn-outline-primary" 
+data-toggle="modal" data-target="#cadCliente">Cadastrar</button>
+<div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Endereço</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php 
+        while($objcli = $dados->fetch_object()){    
+    ?> 
+    <tr>
+      <th scope="row"><?php echo $objcli->codigo;?></th>
+      <td><?php echo $objcli->nome;?></td>
+      <td><?php echo $objcli->endereco;?></td>
+      <td><?php echo $objcli->telefone;?></td>
+      <td> 
+      <a href="editarCliente.php?id=<?php echo $objcli->codigo?>&acao=editar">  
+      <i class="bi bi-pencil-square"></i></a> 
+        
+      <!-- <button location.href="#">Exemplo</button> -->
+      <a href="#" onclick="javascript: if (confirm('Você realmente deseja excluir este cliente?'))location.href='../controller/clienteController.php?id=<?php echo $objcli->codigo ?>&acao=excluir'">
+      <i class="bi bi-trash"></i> </a> 
+    </td>
+    </tr>
+    <?php }?>
+  </tbody>
+</table>
+
+
+</div>
+
+</body>
 <?php
 
 require_once './footer.php';
