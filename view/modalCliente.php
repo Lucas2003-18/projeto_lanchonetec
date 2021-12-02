@@ -4,9 +4,7 @@ require_once './header.php';
 require_once './shared/navbar.php';
 
 ?>
-
-<form action="./controller/clienteController.php" method="post">
-        <div class="modal fade" id="cadCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<form action="../controller/ClienteController.php" method="post">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -31,10 +29,9 @@ require_once './shared/navbar.php';
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
-    
+</form>
 <?php
 
 require_once './footer.php';
+
 ?>
