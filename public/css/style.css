@@ -17,9 +17,9 @@ body {
     height: 100vh;
 }
 
-h1{
+/* h1{
     padding-top: 3vw;
-}
+} */
 
 label{
     font-size: medium;
@@ -31,8 +31,9 @@ label{
 
 #btnAdicionaCliente{
     display: inline;
-    margin-left: 24.5vw;
+    margin-left: 22vw;
     margin-top: -2.72vw;
+    border: 1px solid #ced4da;
 }
 
 .input-group{
