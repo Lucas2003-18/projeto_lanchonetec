@@ -1,5 +1,5 @@
 <?php
-require "../controller/clienteController.php";
+require "../controller/ClienteController.php";
 require_once "./header.php";
 ?>
 

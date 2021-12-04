@@ -1,7 +1,7 @@
 <?php
 require_once "conexao.php";
 
-class Opcoes extends Db{
+class Adicionais extends Db{
 
     //atributos
     private $codigo;

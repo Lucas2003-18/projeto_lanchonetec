@@ -1,38 +1,38 @@
 <?php
 require "../model/conexao.php";
-require "../model/Opcoes.php";
+require "../model/Adicional.php";
 
-$objOpcoes = new Opcoes();
+$objAdicional = new Adicional();
 
-$dados = $objOpcoes->listarTodos($conexao);
+$dados = $objAdicional->listarTodos($conexao);
 
 if (isset($_GET['id'])) {
     $codigo = $_GET['id'];
     $acao = $_GET['acao'];
 
     if ($acao == 'excluir') {
-        if ($objOpcoes->excluirOpcoes($conexao, $codigo))
+        if ($objAdicional->excluirOpcoes($conexao, $codigo))
             header("location:../view/index.php"); //redireciono para página inicial
     }
 }elseif($acao == 'editar'){
-    $dadoscodigo = $objOpcoes->listarporCodigo($conexao, $codigo);
+    $dadoscodigo = $objAdicional->listarporCodigo($conexao, $codigo);
     while($dadosOpcoes=$dadoscodigo->fetch_object()){
         //variaveis
-        $codigo = $dadosOpcoes->codigo;
-        $lanche = $dadosOpcoes->lanche;
-        $bebida = $dadosOpcoes->bebida;
-        $adicional = $dadosOpcoes->adicional;
+        $codigo = $dadosAdicional->codigo;
+        $lanche = $dadosAdicional->lanche;
+        $bebida = $dadosAdicional->bebida;
+        $adicional = $dadosAdicional->adicional;
         $edicao = true;
     }
 }elseif(isset($_POST['edicao'])){
 echo 'chegou';
-    if($objOpcoes->atualizarOpcoes($conexao, $objOpcoes)){
+    if($objAdicional->atualizarAdicional($conexao, $objAdicional)){
     header("location:../view/index.php");
 }else{
     echo "Erro ao inserir!";
 }
 }elseif(isset($_POST['codigo'])){
-if($objOpcoes->inserirOpcoes($conexao, $objOpcoes)){
+if($objAdicional->inserirAdicional($conexao, $objAdicional)){
     header("location:../view/index.php");
 }
 }

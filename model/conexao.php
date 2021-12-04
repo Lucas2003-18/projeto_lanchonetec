@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost"; // mudar dps
-$username = "username"; // mudar dps
-$password = "password";
+$servername = "lanchotec"; // mudar dps
+$username = "root"; // mudar dps
+$password = "Ana121207";
 
 // conecta
 $conn = new mysqli($servername, $username, $password);
