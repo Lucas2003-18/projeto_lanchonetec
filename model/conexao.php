@@ -1,24 +1,22 @@
 <?php
-$servername = "lanchotec"; // mudar dps
-$username = "root"; // mudar dps
-$password = "Ana121207";
+Class Connection{
+    private $host = 'localhost';
+    private $dbname = 'lanchotec';
+    private $username = 'lanchotec';
+    private $password = 'master';
+    private $connection;
 
-// conecta
-$conn = new mysqli($servername, $username, $password);
-
-// se der erro
-if ($conn->connect_error) {
-  die("erro de conexao: " . $conn->connect_error);
+    public function getConnection(){
+        if(is_null($this->connection)){
+            try {
+                $this->connection = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname,$this->username,$this->password);
+                $this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+                $this->connection->exec('set names utf8');
+            } catch (PDOException $e) {
+                echo 'ERROR: '.$e->getMessage();
+            }
+        }
+        return $this->connection;
+    }
 }
-echo "conectado com sucesso";
-
-
-
-
-
-abstract class Db{
-  // abstract public function save();
-  // abstract public function remove($id);
-  // abstract public function find($id);
-}
-?> 
+?>

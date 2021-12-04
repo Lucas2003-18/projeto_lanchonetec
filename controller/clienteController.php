@@ -1,6 +1,6 @@
 <?php
-require "../../../model/conexao.php";
-require "../model/Cliente.php";
+require("../../../model/conexao.php");
+require("../../../model/Cliente.php");
 
 $objCliente = new Cliente(); //instância da classe cliente
 
