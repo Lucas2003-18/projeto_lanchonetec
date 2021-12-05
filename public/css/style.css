@@ -1,6 +1,7 @@
 
 * {
     margin: 0;
+    pointer-events: all;
     padding: 0;
 }
 
@@ -26,14 +27,15 @@ label{
 }
 
 #clientName{
-    width: 400vw;
+    width: calc(100% - 5vw);
+    margin: 0px;
 }
 
-#btnAdicionaCliente{
+#btnAdiciona{
     display: inline;
-    margin-left: 22vw;
-    margin-top: -2.72vw;
-    border: 1px solid #ced4da;
+    width: 38px;
+    margin-left: -75%;
+    border: 1px solid #7b8186;
 }
 
 .input-group{
@@ -41,11 +43,6 @@ label{
 }
 
 #typeSnack{
-    margin-top: 5vh;
-    margin-left: -8vw;
-}
-
-#btnAdicionaLanche{
-    height: 38px;
-    top: 5vh;
+    width: calc(100% - 5vw);
+    margin: 0px;
 }
