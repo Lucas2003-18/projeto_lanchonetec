@@ -1,6 +1,6 @@
 <?php
-require "../model/conexao.php";
-require "../model/Lanche.php";
+require "../../../model/conexao.php";
+require "../../../model/Lanche.php";
 
 class LancheController{
 
@@ -35,7 +35,7 @@ class LancheController{
     }
 }
 
-
+/*
 $objLanche = new Lanche();
 
 $dados = $objLanche->listarTodos($conexao);
@@ -68,4 +68,4 @@ echo 'chegou';
 if($objLanche->inserirLanche($conexao, $objLanche)){
     header("location:../view/index.php");
 }
-}
+}*/

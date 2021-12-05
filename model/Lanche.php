@@ -1,7 +1,8 @@
 <?php
 require_once 'conexao.php';
 
-class Lanches extends Db{
+class Lanche
+{
 
     //atributos
     private $codigo;

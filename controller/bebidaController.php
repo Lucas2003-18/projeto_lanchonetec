@@ -1,6 +1,6 @@
 <?php
-require "../model/conexao.php";
-require "../model/Bebida.php";
+require "../../../model/conexao.php";
+require "../../../model/Bebida.php";
 
 class BebidaController{
 

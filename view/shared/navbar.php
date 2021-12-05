@@ -20,9 +20,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="./pages/cadastros/cadastroCliente.php">Clientes</a>
-          <a class="dropdown-item" href="../pages/cadastros/cadastroBebidas.php">Bebidas</a>
-          <a class="dropdown-item" href="../pages/cadastros/cadastroLanches.php">Lanches</a>
-          <a class="dropdown-item" href="../pages/cadastros/cadastroAdicionais.php">Adicionais</a>
+          <a class="dropdown-item" href="./pages/cadastros/cadastroBebidas.php">Bebidas</a>
+          <a class="dropdown-item" href="./pages/cadastros/cadastroLanches.php">Lanches</a>
+          <a class="dropdown-item" href="./pages/cadastros/cadastroAdicionais.php">Adicionais</a>
         </div>
       </li>
       <li class="nav-item dropdown">

@@ -1,7 +1,8 @@
 <?php
 require_once 'conexao.php';
 
-class Bebidas extends Db{
+class Bebida
+{
 
     //atributos
     private $codigo;

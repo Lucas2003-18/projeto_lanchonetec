@@ -1,6 +1,6 @@
 <?php
-require "../model/conexao.php";
-require "../model/Adicional.php";
+require "../../../model/conexao.php";
+require "../../../model/Adicional.php";
 
 class AdicionalController{
 

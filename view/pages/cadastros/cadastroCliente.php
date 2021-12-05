@@ -65,7 +65,7 @@ require "../../../controller/clienteController.php";
       <?php 
           $objCliente = Cliente();
           $dados = $objCliente->listarTodos();
-          while(''){   
+          while(){   
       ?> 
       <tr>
         <th scope="row"><?php echo $objcli->codigo;?></th>
