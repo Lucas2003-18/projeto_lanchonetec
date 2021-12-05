@@ -24,7 +24,7 @@ data-toggle="modal" data-target="#cadCliente">Cadastrar</button>
   </thead>
   <tbody>
     <?php 
-        while($objcli = $dados->fetch_object()){    
+        while($objcli && $dados = $dados->fetch_object()){    
     ?> 
     <tr>
       <th scope="row"><?php echo $objcli->codigo;?></th>
@@ -49,6 +49,6 @@ data-toggle="modal" data-target="#cadCliente">Cadastrar</button>
 </body>
 <?php
 
-require_once './footer.php';
+require_once '../../footer.php';
 
 ?>
