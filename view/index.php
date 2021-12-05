@@ -3,7 +3,7 @@ session_start();
 //head da página
 require_once 'header.php';
 
-$navbar = require_once './shared/navbar.php';
+$navbar = require './shared/navbar.php';
 ?>
 <br>
 <br>

@@ -1,5 +1,5 @@
 <?php
-Class Connection{
+Class Conexao{
     private $host = 'localhost';
     private $dbname = 'lanchotec';
     private $username = 'lanchotec';

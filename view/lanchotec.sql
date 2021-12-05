@@ -21,6 +21,7 @@ CREATE TABLE lanche (
     id int PRIMARY KEY AUTO_INCREMENT,
     codigo varchar(11),
     tipo varchar(4),
+    nome varchar(25),
     fk_bebidaId int
 );
 
@@ -35,8 +36,8 @@ CREATE TABLE adicionais (
 );
 
 
-create user mornode@localhost identified by 'master';
-grant select, insert, update, delete, execute on lanchotec.* to mornode@localhost;
+create user lanchotec@localhost identified by 'master';
+grant select, insert, update, delete, execute on lanchotec.* to lanchotec@localhost;
 
 
 

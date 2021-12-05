@@ -2,7 +2,6 @@
 
 include "../../header.php";
 require_once '../../shared/navbar.php';
-//include "../modals/modalCliente.php";
 require "../../../controller/lancheController.php";
 
 
@@ -18,6 +17,7 @@ data-toggle="modal" data-target="#cadCliente">Cadastrar</button>
   <thead>
     <tr>
       <th scope="col">Código</th>
+      <th scope="col">Nome</th>
       <th scope="col">Tipo</th>
       <th scope="col">Ações</th>
     </tr>
@@ -28,6 +28,7 @@ data-toggle="modal" data-target="#cadCliente">Cadastrar</button>
     ?> 
     <tr>
       <th scope="row"><?php echo $objcli->codigo;?></th>
+      <td><?php echo $objcli->nome;?></td>
       <td><?php echo $objcli->tipo;?></td>
       <td> 
       <a href="editarLanche.php?id=<?php echo $objcli->codigo?>&acao=editar">  

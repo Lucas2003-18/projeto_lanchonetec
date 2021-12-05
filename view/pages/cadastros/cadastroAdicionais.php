@@ -1,7 +1,6 @@
 <?php
 
 include "../../header.php";
-require_once '../../shared/navbar.php';
 //include "../modals/modalCliente.php";
 require "../../../controller/adicionalController.php";
 

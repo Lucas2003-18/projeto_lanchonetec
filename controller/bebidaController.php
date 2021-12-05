@@ -1,6 +1,40 @@
 <?php
-require "../model/conexao.php";
-require "../model/Bebida.php";
+require "../../../model/conexao.php";
+require "../../../model/Bebida.php";
+
+class BebidaController{
+
+    public function salvarBebida(){
+        $bebida = new Bebida();
+
+        if(isset($_SESSION['id'])){ $bebida->setId($_POST['id']); }
+        $bebida->setNome($_POST['nome']);
+        $bebida->setTipo($_POST['tipo']);
+
+        if($bebida->save() == 'uequals'){
+            echo '<div class="alert h6 mt-2" role="alert" style="color: #856404;background-color: #fff3cd;border-color: #ffeeba;">
+                    User already exists.
+                  </div>';
+        }else{
+            return true;
+        }
+    }
+
+    public function listAll(){
+        $bebida = new Bebida();
+        return $bebida->listarTodos();
+    }
+
+    public function excluir($id){
+        $bebida = new Bebida();
+        $bebida = $bebida->remove($id);
+    }
+
+    public function editar($id){
+        $bebida = new Bebida();
+        $bebida = $bebida->edition($id);
+    }
+}
 
 $objBebida = new Bebida();
 

@@ -1,7 +1,8 @@
 <?php
 require_once 'conexao.php';
 
-class Bebidas extends Db{
+class Bebida
+{
 
     //atributos
     private $codigo;
@@ -89,6 +90,86 @@ class Bebidas extends Db{
         $this->tipo = $tipo;
 
         return $this;
+    }
+
+    public function salvar(){
+        $connection = new Connection();
+        $conn = $connection->getConnection();
+        if($this->id > 0){
+            try{
+                $query = 'UPDATE bebida SET nome = :nome, tipo = :tipo WHERE id = :id';
+                $stmt = $conn->prepare($query);
+                if($stmt->execute(array(':id'=>$this->id, ':lanche'=>$this->lanche, ':bebida'=>$this->bebida, ':adicional'=>$this->adicional)))
+                {
+                    $result = $stmt->rowCount();
+                }
+            } catch(PDOException $e) {
+                echo 'ERRO: '.$e->getMessage();
+            }
+            if($result > 0){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            try{
+                $query = 'INSERT INTO bebida VALUES (NULL, :nome, :tipo)';
+                $stmt = $conn->prepare($query);
+                if($stmt->execute(array(':nome'=>$this->nome, ':tipo'=>$this->tipo)))
+                {
+                    $result = $stmt->rowCount();
+                }
+                if($result > 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            } catch (PDOException $e){
+                echo 'ERRO: '.$e->getMessage();
+            }
+        }
+    }
+
+    public function excluir($id){
+        $connection = new Connection();
+        $conn = $connection->getConnection();
+        try{
+            $query = 'DELETE FROM bebida WHERE id = :id';
+            $stmt = $conn->prepare($query);
+            if($stmt->execute(array(':id'=>$this->id)))
+            {
+                $result = $stmt->rowCount();
+            }
+        } catch (PDOException $e)
+        {
+            echo 'ERRO: '.$e->getMessage();
+        }
+        return $result;
+    }
+
+    public function listarTodos()
+    {
+        $connection = new Conexao();
+        $conn = $connection->getConnection();
+
+        try {
+            $comandosql = "SELECT * FROM bebida";
+            $stmt = $conn->prepare($comandosql);
+            $result = array();
+            if($stmt->execute()){
+                while($rs = $stmt->fetchObject(Bebida::class)){
+                    $result[] = $rs;
+                }
+            }else{
+                $result = false;
+            }
+            return $result;
+        } catch (PDOException $e) {
+            echo 'ERRO: '.$e->getMessage();
+        }
+        // //consulta banco de dados e trazer todos os registros do cliente
+        // $dados = $conexao->query($comandosql);
+        // return $dados;
     }
 }
 

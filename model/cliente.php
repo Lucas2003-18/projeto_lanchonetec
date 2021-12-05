@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Conexao.php';
+
 class Cliente
 {
 
@@ -19,7 +21,6 @@ class Cliente
     {
         $this->nome = $nome;
     }
-
 
     /**
      * Get the value of codigo
@@ -81,12 +82,29 @@ class Cliente
         return $this;
     }
 
-    public function listarTodos($conexao)
+    public function listarTodos()
     {
-        //consulta banco de dados e trazer todos os registros do cliente
-        $comandosql = "Select * from cliente";
-        $dados = $conexao->query($comandosql);
-        return $dados;
+        $connection = new Conexao();
+        $conn = $connection->getConnection();
+
+        try {
+            $comandosql = "SELECT * FROM cliente";
+            $stmt = $conn->prepare($comandosql);
+            $result = array();
+            if($stmt->execute()){
+                while($rs = $stmt->fetchObject(Cliente::class)){
+                    $result[] = $rs;
+                }
+            }else{
+                $result = false;
+            }
+            return $result;
+        } catch (PDOException $e) {
+            echo 'ERRO: '.$e->getMessage();
+        }
+        // //consulta banco de dados e trazer todos os registros do cliente
+        // $dados = $conexao->query($comandosql);
+        // return $dados;
     }
 
     public function fecharConexao($conexao, $dados = null)
