@@ -15,4 +15,3 @@
     <link rel="shortcut icon" type="imagex/png" href="../public/img/lanchotec.jpg">    
     <title>Lanchotec | Página Inicial</title>
 </head>
-<body>
