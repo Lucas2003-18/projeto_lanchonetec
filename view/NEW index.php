@@ -1,3 +1,4 @@
+<body style="background-color: #fdfdfd;">
 <?php 
 session_start();
 //head da página
@@ -7,17 +8,16 @@ $navbar = require_once './shared/navbar.php';
 ?>
 <script>
     window.onload = function() {
-        UnSelectAll('bebida')
+        UnSelectAll('bebida');
         UnSelectAll('bebidaGelada');
         UnSelectAll('radioAdicionais');
     }
 </script>
-<div style="width: 100vw; height: 90vh; display: grid; grid-template-columns: 65% 35%;">
+<div style="width: 100vw; height: calc(100vh - 56px); display: grid; grid-template-columns: 65% 35%;">
     <div style="width: 100%; height: 100%;">
-        <div style="width: 100%; height: 35%; padding-top: 1vw; padding-left: 2vw; padding-top: 1vw; padding-left: 2vw; background-color: purple;">
-            <h3>dados</h3>
+        <div style="width: calc(100% - 20px); height: calc(35% - 20px); padding-top: 0.5vh; padding-left: 2vw; padding-top: 0.5vh; padding-left: 2vw; background-color: none; border: 10px double #e2e2e2; border-radius: 20px; margin: 10px;">
             <label for="codigoPedido">Código do Pedido</label>
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="12345678">
+            <input type="text" readonly class="form-control" id="staticEmail" value="12345678" style="width: calc(100% - 11.5vw);" disabled>
 
             <label for="clientName">Nome do Cliente</label>
             <div style="display: grid; grid-template-columns: 90% 10%;">
@@ -35,7 +35,7 @@ $navbar = require_once './shared/navbar.php';
                     </svg>
                 </button>
 
-                <div id="exampleModal" style="position: fixed; background-color: rgba(0, 0, 0, 0.5); height: 100vh; width: 100vw; top: 0px; left: 0px; display:none;">
+                <div id="exampleModal" style="position: fixed; background-color: rgba(0, 0, 0, 0.5); height: 100vh; width: 100vw; top: 0px; left: 0px; display:none; z-index: 999;">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -77,7 +77,7 @@ $navbar = require_once './shared/navbar.php';
         
         <div style="width: 100%; height: 65%; display: grid; grid-template-columns: 65% 35%;">
             <div style="width: 100%; height: 100%;">
-                <div style="width: 100%; height: 34%; padding-top: 1vw; padding-left: 2vw; background-color: magenta">
+                <div style="width: calc(100% - 20px); height: calc(25% - 20px); padding-top: 0.5vh; padding-left: 2vw; background-color: none; border: 10px double #e2e2e2; border-radius: 20px; margin: 10px;">
                     <label for="typeSnack">Tipo de Lanche</label>
                     <div style="display: grid; grid-template-columns: 90% 10%;">
                         <select class="form-control" id="typeSnack">
@@ -94,7 +94,7 @@ $navbar = require_once './shared/navbar.php';
                             </svg>
                         </button>
 
-                        <div id="modalProdutos" style="position: fixed; background-color: rgba(0, 0, 0, 0.5); height: 100vh; width: 100vw; top: 0px; left: 0px; display:none;">
+                        <div id="modalProdutos" style="position: fixed; background-color: rgba(0, 0, 0, 0.5); height: 100vh; width: 100vw; top: 0px; left: 0px; display:none; z-index: 999;">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -129,8 +129,8 @@ $navbar = require_once './shared/navbar.php';
 
                     </div>
                 </div> <!-- tipos de lanche -->
-                <div style="width: 100%; height: 33%; display: grid; grid-template-columns: 50% 50%;">
-                    <div style="width: 100%; height: 100%; padding-top: 1vw; padding-left: 2vw; background-color: white">
+                <div style="width: 100%; height: 25%; display: grid; grid-template-columns: 50% 50%;">
+                    <div style="width: calc(100% - 20px); height: calc(100% - 20px); padding-top: 0.5vh; padding-left: 2vw; background-color: none; border: 10px double #e2e2e2; border-radius: 20px; margin: 10px;">
                         <label for="Drink">Bebida</label>
                         <br>
                         <div class="form-check form-check-inline" onclick="document.getElementById('darkerBebidaGelada').style.display = 'none';">
@@ -142,9 +142,9 @@ $navbar = require_once './shared/navbar.php';
                             <label class="form-check-label" for="bebidaN">Não</label>
                         </div>
                     </div> <!-- bebidas -->
-                    <div id="darkerBebidaGelada" style="position: absolute; left:21.125vw; width: 21.125vw; height: 19.305%; padding-top: 1vw; padding-left: 2vw; background-color: rgb(155,155,155,0.3); display: none; z-index: 999;">
+                    <div id="darkerBebidaGelada" style="position: absolute; left:21.125vw; width: calc(21.125vw - 20px); height: calc(19.305% - 20px); padding-top: 0.5vh; padding-left: 2vw; background-color: rgb(155,155,155,0.3);  border-radius: 20px; margin: 10px; display: none; z-index: 999;">
                     </div> <!-- escurece adicionais 2 -->
-                    <div style="width: 100%; height: 100%; padding-top: 1vw; padding-left: 2vw; background-color: cyan">
+                    <div style="width: calc(100% - 20px); height: calc(100% - 20px); padding-top: 0.5vh; padding-left: 2vw; background-color: none; border: 10px double #e2e2e2; border-radius: 20px; margin: 10px;">
                         <label for="ColdDrink">Bebida Gelada?</label>
                         <br>
                         <div class="form-check form-check-inline">
@@ -157,7 +157,7 @@ $navbar = require_once './shared/navbar.php';
                         </div>
                     </div> <!-- bebida gelada -->
                 </div>
-                <div style="width: 100%; height: 33%; padding-top: 1vw; padding-left: 2vw; background-color: gray">
+                <div style="width: calc(100% - 20px); height: calc(25% - 20px); padding-top: 0.5vh; padding-left: 2vw; background-color: none; border: 10px double #e2e2e2; border-radius: 20px; margin: 10px;">
                     <label for="typesDrinks">Tipos de Bebidas</label>
                     <div style="display: grid; grid-template-columns: 90% 10%;">
                             <select class="form-control" id="typeSnack">
@@ -174,7 +174,7 @@ $navbar = require_once './shared/navbar.php';
                                 </svg>
                             </button>
 
-                            <div id="modalProdutos" style="position: fixed; background-color: rgba(0, 0, 0, 0.5); height: 100vh; width: 100vw; top: 0px; left: 0px; display:none;">
+                            <div id="modalProdutos" style="position: fixed; background-color: rgba(0, 0, 0, 0.5); height: 100vh; width: 100vw; top: 0px; left: 0px; display:none; z-index: 999;">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -208,9 +208,13 @@ $navbar = require_once './shared/navbar.php';
                         </div>
                     </div>
                 </div> <!-- tipos de bebidas -->
+                <div style="width: calc(100% - 20px); height: calc(25% - 20px); padding-top: 0.5vh; padding-left: 2vw; background-color: none; border: 10px double #e2e2e2; border-radius: 20px; margin: 10px;">
+                <label for="date" style="margin-left: 10px;">Data do pedido</label>
+                <input class="form-control" type="date" style="border-radius: 20px; margin: 10px; width: calc(100% - 40px); resize:none;"></input>
+                </div>
             </div>
             <div style="width: 100%; height: 100%;">
-                <div style="width: 100%; height: 34%; padding-top: 1vw; padding-left: 2vw; background-color: yellow">
+                <div style="width: calc(100% - 20px); height: calc(25% - 20px); padding-top: 0.5vh; padding-left: 2vw; background-color: none; border: 10px double #e2e2e2; border-radius: 20px; margin: 10px;">
                     <label for="additional1">Adicionais?</label>
                     <br>
                     <div class="form-check form-check-inline" onclick="document.getElementById('darkerAd2').style.display = 'none';">
@@ -232,10 +236,10 @@ $navbar = require_once './shared/navbar.php';
                         <label class="form-check-label" for="radioAdicionaisN">Não</label>
                     </div>
                 </div> <!-- adicionais -->
-                <div id="darkerAd2" style="position: absolute; width: 22.75%; height: 38.75%; padding-top: 1vw; padding-left: 2vw; background-color: rgb(155,155,155,0.3); display: none; z-index: 999;">
+                <div id="darkerAd2" style="position: absolute; width: calc(22.75% - 20px); height: calc(38.95% - 20px); padding-top: 0.5vh; padding-left: 2vw; background-color: rgb(155,155,155,0.3);  border-radius: 20px; margin: 10px; display: none; z-index: 999;">
                 </div> <!-- escurece adicionais 2 -->
                 
-                <div style="width: 100%; height: 66%; padding-top: 1vw; padding-left: 2vw; background-color: #28a745" id="ad2">
+                <div style="width: calc(100% - 20px); height: calc(66% - 20px); padding-top: 0.5vh; padding-left: 2vw; background-color: none; border: 10px double #e2e2e2; border-radius: 20px; margin: 10px; margin-top:20px;" id="ad2">
                     <label for="additional2">Adicionais:</label>
                     <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="adicionais" value="" id="flexCheckDefault">
@@ -283,8 +287,12 @@ $navbar = require_once './shared/navbar.php';
                 </div> <!-- adicionais 2 -->
             </div>
         </div>
+        <div style="background-color: none; border: 10px double #e2e2e2; border-radius: 20px; margin: 10px;">
+            <label for="comments" style="margin-left: 10px;">Observações</label>
+            <textarea class="form-control" placeholder="Faça as suas observações aqui" id="comments" style="border-radius: 20px; margin: 10px; width: calc(100% - 40px); resize:none;"></textarea>
+        </div>
     </div>
-    <div style="width: 100%; height: 100%; padding-top: 1vw; padding-left: 2vw; background-color: blue;">
+    <div style="width: calc(100% - 20px); height: calc(100% - 30px); padding-top: 0.5vh; padding-left: 2vw; background-color: none; border: 10px double #e2e2e2; border-radius: 20px; margin: 10px; margin-left: 5px;">
         <label for="request">Pedido</label>
         <textarea style="resize: none; width: calc(100% - 1vw); height: 90%;" class="form-control" placeholder="Seu pedido:" id="request" disabled></textarea>
     </div> <!-- pedidos -->
