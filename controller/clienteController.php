@@ -1,10 +1,33 @@
 <?php
-require("../../../model/conexao.php");
 require("../../../model/Cliente.php");
+
+class ClienteController{
+
+    public function salvarCliente(){
+        $cliente = new Cliente();
+        if(isset($_SESSION['id'])){ $cliente->setId($_REQUEST['id']) }
+        
+
+    }
+
+
+    public function listAll(){
+        $cliente = new Cliente();
+        return $cliente->listarTodos();
+    }
+
+    public function excluir($id){
+
+    }
+
+    public function editar($id){
+
+    }
+}
 
 $objCliente = new Cliente(); //instância da classe cliente
 
-$dados = $objCliente->listarTodos($conexao);
+$dados = $objCliente->listarTodos();
 
 if (isset($_GET['id'])) {
     $codigo = $_GET['id'];
@@ -14,7 +37,7 @@ if (isset($_GET['id'])) {
         if ($objCliente->excluirCliente($conexao, $codigo))
             header("location:../view/index.php"); //redireciono para página inicial
     }
-}elseif($acao == 'editar'){
+}else if($acao == 'editar'){
     $dadoscodigo = $objCliente->listarporCodigo($conexao, $codigo);
     while($dadosCliente=$dadoscodigo->fetch_object()){
         //variaveis
@@ -24,15 +47,15 @@ if (isset($_GET['id'])) {
         $telefone = $dadosCliente->telefone;
         $edicao = true;
     }
-}elseif(isset($_POST['edicao'])){
+}else if(isset($_POST['edicao'])){
 echo 'chegou';
     if($objCliente->atualizarCliente($conexao, $objCliente)){
     header("location:../view/index.php");
 }else{
     echo "Erro ao inserir!";
 }
-}elseif(isset($_POST['codigo'])){
-if($objCliente->inserirCliente($conexao, $objCliente)){
-    header("location:../view/index.php");
-}
+}else if(isset($_POST['codigo'])){
+    if($objCliente->inserirCliente($conexao, $objCliente)){
+        header("location:../view/index.php");
+    }
 }

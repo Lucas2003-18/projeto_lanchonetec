@@ -35,8 +35,8 @@ CREATE TABLE adicionais (
 );
 
 
-create user mornode@localhost identified by 'master';
-grant select, insert, update, delete, execute on lanchotec.* to mornode@localhost;
+create user lanchotec@localhost identified by 'master';
+grant select, insert, update, delete, execute on lanchotec.* to lanchotec@localhost;
 
 
 
