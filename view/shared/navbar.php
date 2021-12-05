@@ -9,7 +9,7 @@
         <a class="nav-link" href="./index.php">Novo <span class="sr-only">(Página atual)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Fechar Pedidio</a>
+        <a class="nav-link" href="#">Fechar Pedido</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Salvar</a>

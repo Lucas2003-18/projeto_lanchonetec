@@ -3,7 +3,7 @@
 include "../../header.php";
 require "../../shared/navbar.php";
 include "../modals/modalCliente.php";
-require "../../../controller/clienteController.php";
+require_once "../../../controller/ClienteController.php";
 
 ?>
 <!--nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -63,25 +63,30 @@ require "../../../controller/clienteController.php";
     </thead>
     <tbody>
       <?php 
-          $objCliente = Cliente();
-          $dados = $objCliente->listarTodos();
-          while(){   
-      ?> 
-      <tr>
-        <th scope="row"><?php echo $objcli->codigo;?></th>
-        <td><?php echo $objcli->nome;?></td>
-        <td><?php echo $objcli->endereco;?></td>
-        <td><?php echo $objcli->telefone;?></td>
-        <td> 
-        <a href="editarCliente.php?id=<?php echo $objcli->codigo?>&acao=editar">  
-        <i class="bi bi-pencil-square"></i></a> 
-        
-        <!-- <button location.href="#">Exemplo</button> -->
-        <a href="#" onclick="javascript: if (confirm('Você realmente deseja excluir este cliente?'))location.href='../controller/clienteController.php?id=<?php echo $objcli->codigo ?>&acao=excluir'">
-        <i class="bi bi-trash"></i> </a> 
-      </td>
-      </tr>
-      <?php }?>
+          $objCliente = ClienteController();
+          $dados = call_user_func(array('ClienteController','listarClientes'));
+          if(isset($dados) && !empty($dados)){
+            foreach($dados as $dado){
+              ?>
+              <tr>
+                <th scope="row"><?php echo $dado->codigo;?></th>
+                <td><?php echo $dado->nome;?></td>
+                <td><?php echo $dado->endereco;?></td>
+                <td><?php echo $dado->telefone;?></td>
+                <td> 
+                <a href="editarCliente.php?id=<?php echo $dado->codigo?>&acao=editar">  
+                <i class="bi bi-pencil-square"></i></a> 
+                
+                <!-- <button location.href="#">Exemplo</button> -->
+                <a href="#" onclick="javascript: if (confirm('Você realmente deseja excluir este cliente?'))location.href='../controller/clienteController.php?id=<?php echo $dado->codigo; ?>&acao=excluir'">
+                <i class="bi bi-trash"></i> </a> 
+              </td>
+              </tr>
+              <?php
+            }
+          }
+          
+      ?>
     </tbody>
   </table>
 

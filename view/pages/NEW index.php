@@ -1,4 +1,4 @@
-<body style="background-color: #fdfdfd;">
+
 <?php 
 session_start();
 //head da página
