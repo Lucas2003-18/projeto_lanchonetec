@@ -5,9 +5,18 @@ class ClienteController{
 
     public function salvarCliente(){
         $cliente = new Cliente();
-        if(isset($_SESSION['id'])){ $cliente->setId($_REQUEST['id']) }
-        
+        if(isset($_SESSION['id'])){ $cliente->setId($_REQUEST['id']); }
+        $cliente->setNome($_POST['nome']);
+        $cliente->setEndereco($_POST['endereco']);
+        $cliente->setTelefone($_POST['telefone']);
 
+        if($cliente->save() == 'uequals'){
+            echo '<div class="alert h6 mt-2" role="alert" style="color: #856404;background-color: #fff3cd;border-color: #ffeeba;">
+                    User already exists.
+                  </div>';
+        }else{
+            return true;
+        }
     }
 
 
@@ -17,11 +26,13 @@ class ClienteController{
     }
 
     public function excluir($id){
-
+        $cliente = new Cliente();
+        $cliente =  $cliente->remove($id);
     }
 
     public function editar($id){
-
+        $cliente = new Cliente();
+        $cliente = $cliente->edition($id);
     }
 }
 

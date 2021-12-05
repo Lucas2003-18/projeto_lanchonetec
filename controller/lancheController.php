@@ -2,6 +2,40 @@
 require "../model/conexao.php";
 require "../model/Lanche.php";
 
+class LancheController{
+
+    public function salvarLanche(){
+        $lanche = new Lanche();
+
+        if(isset($_SESSION['id'])){ $lanche->setId($_POST['id']); }
+        $lanche->setTipo($_POST['tipo']);
+
+        if($lanche->save() == 'uequals'){
+            echo '<div class="alert h6 mt-2" role="alert" style="color: #856404;background-color: #fff3cd;border-color: #ffeeba;">
+                    User already exists.
+                  </div>';
+        }else{
+            return true;
+        }
+    }
+
+    public function listAll(){
+        $lanche = new Lanche();
+        return $lanche->listarTodos();
+    }
+
+    public function excluir($id){
+        $lanche = new Lanche();
+        $lanche = $lanche->remove($id);
+    }
+
+    public function editar($id){
+        $lanche = new Lanche();
+        $lanche = $lanche->edition($id);
+    }
+}
+
+
 $objLanche = new Lanche();
 
 $dados = $objLanche->listarTodos($conexao);

@@ -2,6 +2,42 @@
 require "../model/conexao.php";
 require "../model/Adicional.php";
 
+class AdicionalController{
+
+    public function salvarAdicional(){
+        $adicional = new Adicional();
+
+        if(isset($_SESSION['id'])){ $adicional->setId($_POST['id']); }
+        $adicional->setLanche($_POST['lanche']);
+        $adicional->setBebida($_POST['bebida']);
+        $adicional->setAdicional($_POST['adicional']);
+
+        if($adicional->save() == 'uequals'){
+            echo '<div class="alert h6 mt-2" role="alert" style="color: #856404;background-color: #fff3cd;border-color: #ffeeba;">
+                    User already exists.
+                  </div>';
+        }else{
+            return true;
+        }
+    }
+
+    public function listAll(){
+        $adicional = new Adicional();
+        return $adicional->listarTodos();
+    }
+
+    public function excluir($id){
+        $adicional = new Adicional();
+        $adicional = $adicional->remove($id);
+    }
+
+    public function editar($id){
+        $adicional = new Adicionl();
+        $adicional = $adicional->edition($id);
+    }
+}
+
+
 $objAdicional = new Adicional();
 
 $dados = $objAdicional->listarTodos($conexao);

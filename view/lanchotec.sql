@@ -21,6 +21,7 @@ CREATE TABLE lanche (
     id int PRIMARY KEY AUTO_INCREMENT,
     codigo varchar(11),
     tipo varchar(4),
+    nome varchar(25),
     fk_bebidaId int
 );
 
