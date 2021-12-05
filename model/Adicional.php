@@ -118,7 +118,7 @@ class Adicional
         $conn = $connection->getConnection();
         if($this->id > 0){
             try{
-                $query = 'UPDATE adicional SET lanche = :lanche, bebida = :bebida, adicional = :adicional WHERE id = :id';
+                $query = 'UPDATE adicionais SET lanche = :lanche, bebida = :bebida, adicional = :adicional WHERE id = :id';
                 $stmt = $conn->prepare($query);
                 if($stmt->execute(array(':id'=>$this->id, ':lanche'=>$this->lanche, ':bebida'=>$this->bebida, ':adicional'=>$this->adicional)))
                 {
@@ -134,7 +134,7 @@ class Adicional
             }
         }else{
             try{
-                $query = 'INSERT INTO adicional VALUES (NULL, :lanche, :bebida, :adicional)';
+                $query = 'INSERT INTO adicionais VALUES (NULL, :lanche, :bebida, :adicional)';
                 $stmt = $conn->prepare($query);
                 if($stmt->execute(array(':lanche'=>$this->lanche, ':bebida'=>$this->bebida, ':adicional'=>$this->adicional)))
                 {
@@ -155,7 +155,7 @@ class Adicional
         $connection = new Connection();
         $conn = $connection->getConnection();
         try{
-            $query = 'DELETE FROM adicional WHERE id = :id';
+            $query = 'DELETE FROM adicionais WHERE id = :id';
             $stmt = $conn->prepare($query);
             if($stmt->execute(array(':id'=>$this->id)))
             {
@@ -174,7 +174,7 @@ class Adicional
         $conn = $connection->getConnection();
 
         try {
-            $comandosql = "SELECT * FROM adicional";
+            $comandosql = "SELECT * FROM adicionais";
             $stmt = $conn->prepare($comandosql);
             $result = array();
             if($stmt->execute()){

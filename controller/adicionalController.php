@@ -32,13 +32,13 @@ class AdicionalController{
     }
 
     public function editar($id){
-        $adicional = new Adicionl();
+        $adicional = new Adicional();
         $adicional = $adicional->edition($id);
     }
 }
 
 
-$objAdicional = new Adicional();
+/*$objAdicional = new Adicional();
 
 $dados = $objAdicional->listarTodos($conexao);
 
@@ -71,4 +71,4 @@ echo 'chegou';
 if($objAdicional->inserirAdicional($conexao, $objAdicional)){
     header("location:../view/index.php");
 }
-}
+}*/

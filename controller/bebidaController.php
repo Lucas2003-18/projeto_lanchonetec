@@ -36,7 +36,7 @@ class BebidaController{
     }
 }
 
-$objBebida = new Bebida();
+/*$objBebida = new Bebida();
 
 $dados = $objBebida->listarTodos($conexao);
 
@@ -69,4 +69,4 @@ echo 'chegou';
 if($objBebida->inserirBebida($conexao, $objBebida)){
     header("location:../view/index.php");
 }
-}
+}*/
