@@ -1,3 +1,19 @@
+<!--
+    Lucas Rafael Barbosa Ribeiro - 2760482111004
+    Otavio Custodio Zampar - 2760482111011
+    Derick Pacheco Cadete - 2760482111044
+    Barbara Lima 2760482111021
+
+    bom vamos lá, esse é um projeto que eu gostei bastante da ideia de como ele iria ficar, me animou bastante
+    mas aconteceram diversos imprevistos que acabaram atrapalhando na hora de fazer ele
+    com isso não deu pra deixar ele totalmente funcional
+
+    *a navbar não está funcionando, o pq disso eu nn sei, ela parou do nada
+    *não conseguimos deixar ela funcional a diversos erros que aconteciam e que ninguem sabia corrigir
+    *eu recomendo, se for testar, usar a url para acessar as páginas de cadastros, por causa da navbar
+    *futuramente eu pretendo mexer com ela de novo, pq eu gostei bastante kkk*
+-->
+
 <body style="background-color: #fdfdfd;">
 <?php 
 session_start();
